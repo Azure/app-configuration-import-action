@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-name=$1
-filePath=$2
-prefix=$3
-label=$4
+name="$1"
+filePath="$2"
+prefix="$3"
+label="$4"
 
 readonly fileExtensions="json,properties,yaml"
 readonly fileExtension="${filePath##*.}"
