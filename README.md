@@ -6,6 +6,11 @@ GitHub Action that imports application keys and feature flags into Azure App Con
 
 The action is useful to import key-values and feature flags in an App Configuration instance dynamically, without the need to redeploy or restart an application.
 
+## Prerequisites
+
+* An Azure service principal added as a secret on your GitHub repository. For more info, see [Create a service principal and add it to GitHub secret](https://docs.microsoft.com/azure/developer/github/connect-from-azure#create-a-service-principal-and-add-it-to-github-secret).
+* Existing Azure App Configuration instance. For more info, see [Create an App Configuration store](https://docs.microsoft.com/en-us/azure/azure-app-configuration/quickstart-aspnet-core-app?tabs=core5x#create-an-app-configuration-store).
+
 ## Example Usage
 
 ### **Import all keys and feature flags from a file**
