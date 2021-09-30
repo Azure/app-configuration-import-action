@@ -3,13 +3,13 @@ description: Import application key-values and feature flags into an Azure App C
 
 inputs:
   name:
-    description: The source of importing. Note that importing feature flags from App Service is not supported.
+    description: App Configuration name.
     required: true
   path:
     description: Configuration file path
     required: false
   sourceName:
-    description: The name of the source App Configuration.
+    description: App Configuration source of importing. Note that importing feature flags from App Service is not supported.
     required: false
   appServiceAccountName:
     description: App service account name
