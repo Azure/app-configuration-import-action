@@ -1,14 +1,39 @@
-# Project
+# Azure App Configuration Import Action
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+GitHub Action that imports application keys and feature flags into Azure App Configuration.
 
-As the maintainer of this project, please make a few updates:
+## When to use
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+The action is useful to import key-values and feature flags in an App Configuration instance dynamically, without the need to redeploy or restart an application.
+
+## Example Usage
+
+### **Import all keys and feature flags from a file**
+
+```yml
+steps:
+  - name: Azure Login
+    uses: azure/login@v1
+    with:
+      creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+  - name: Import from config file
+    uses: Azure/app-configuration-import-action@v1.0.0
+    with:
+      name: myAppConfigurationName
+      path: myFilePath
+      # prefix: myPrefix
+      # label: myLabel
+```
+
+### Inputs
+
+| Name | Description | Required |
+| --- | --- | --- |
+| `name` | App Configuration name. | false |
+| `path` | Configuration file path. Accepted file extensions: `.json`, `.properties`, `.yml` and `.yaml`. | false |
+| `prefix` | Prefix to be appended to the front of imported keys. | false |
+| `label` | Label to be assigned to imported key-values and feature flags. | false |
 
 ## Contributing
 
