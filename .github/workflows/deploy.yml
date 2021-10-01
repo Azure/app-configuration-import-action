@@ -6,6 +6,7 @@ on:
       - "action.yml"
       - ".github/workflows/deploy.yml"
       - "samples/**"
+      - "scripts/**"
 
   workflow_dispatch:
 
