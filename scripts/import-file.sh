@@ -31,7 +31,7 @@ else
 fi
 
 # Return error if file extension is not supported
-[ -z "$fileFormat" ] && echo "Invalid file format. Supported values are: json, properties and yaml." && exit 1
+[ -z "$fileFormat" ] && echo "Invalid '$fileFormat' file format. Supported values are: json, properties and yaml." && exit 1
 
 az appconfig kv import \
   --name "$name" \
