@@ -35,8 +35,8 @@ steps:
 
 | Name | Description | Required |
 | --- | --- | --- |
-| `name` | App Configuration name. | false |
-| `path` | Configuration file path. Accepted file extensions: `.json`, `.properties`, `.yml` and `.yaml`. | false |
+| `name` | App Configuration name. | true |
+| `path` | Configuration file path. Accepted file extensions: `.json`, `.properties`, `.yml` and `.yaml`. | true |
 | `prefix` | Prefix to be appended to the front of imported keys. | false |
 | `label` | Label to be assigned to imported key-values and feature flags. | false |
 
