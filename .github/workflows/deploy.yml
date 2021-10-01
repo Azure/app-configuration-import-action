@@ -1,0 +1,45 @@
+name: Deploy
+
+on:
+  push:
+    paths:
+      - "action.yml"
+      - ".github/workflows/deploy.yml"
+      - "samples/**"
+
+  workflow_dispatch:
+
+env:
+  appConfigName: ${{secrets.APP_CONFIG_NAME}}
+  
+jobs:
+  deploy:
+    name: Deploy from files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code checkout
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Import from a properties file
+        uses: ./
+        with:
+          name: ${{env.appConfigName}}
+          path: ./samples/sample.properties
+
+      - name: Import from a json file
+        uses: ./
+        with:
+          name: ${{env.appConfigName}}
+          path: ./samples/sample.json
+
+      - name: Import from a yml file
+        uses: ./
+        with:
+          name: ${{env.appConfigName}}
+          path: ./samples/sample.yml
