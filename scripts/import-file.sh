@@ -5,7 +5,7 @@ filePath="$2"
 prefix="$3"
 label="$4"
 
-readonly fileExtensions="json,properties,yaml"
+readonly fileExtensions="json properties yaml"
 readonly fileExtension="${filePath##*.}"
 
 # Create a label parameter if label value is not empty
@@ -20,12 +20,11 @@ if [ ! -z "$prefix" ]; then
   prefixParam="--prefix $prefix"
 fi
 
-# Detect file extension
 fileFormat=
 if [[ "$fileExtension" == "yml" ]]; then
   fileFormat="yaml"
 else
-  if [[ "$fileExtension" == *"$fileExtensions"* ]]; then
+  if [[ "$fileExtensions" == *"$fileExtension"* ]]; then
     fileFormat=$fileExtension
   fi
 fi
