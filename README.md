@@ -31,7 +31,7 @@ steps:
       # label: myLabel
 ```
 
-### Inputs
+## Inputs
 
 | Name | Description | Required |
 | --- | --- | --- |
