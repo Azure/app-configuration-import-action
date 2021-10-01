@@ -1,4 +1,4 @@
-# Azure App Configuration Import Action
+# Azure App Configuration Import Action [![Deploy](https://github.com/Azure/app-configuration-import-action/actions/workflows/deploy.yml/badge.svg)](https://github.com/Azure/app-configuration-import-action/actions/workflows/deploy.yml)
 
 GitHub Action that imports application keys and feature flags into Azure App Configuration.
 
@@ -39,6 +39,13 @@ steps:
 | `path` | Configuration file path. Accepted file extensions: `.json`, `.properties`, `.yml` and `.yaml`. | false |
 | `prefix` | Prefix to be appended to the front of imported keys. | false |
 | `label` | Label to be assigned to imported key-values and feature flags. | false |
+
+## Limitations
+
+Currently the action does not support:
+
+* Importing keys and feature flags from another App Configuration instance and from an App Service.
+* Import only key values and exclude all feature flags.
 
 ## Contributing
 
